@@ -1,0 +1,14 @@
+<header>
+  <span *ngIf="shopParams.count > 0">
+    Showing <strong>
+      {{ shopParams.currentPageLo()}} - {{ shopParams.currentPageHi()}}
+    </strong> of <strong>
+      {{ shopParams.count }}
+    </strong> Results
+  </span>
+  <span *ngIf="shopParams.count === 0">
+    There are
+    <strong>0</strong>
+    results for this filter
+  </span>
+</header>
