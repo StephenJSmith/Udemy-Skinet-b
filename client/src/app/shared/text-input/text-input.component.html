@@ -1,0 +1,21 @@
+<div class="form-label-group">
+  <input
+    #input
+    [ngClass]="controlClass"
+    [type]="type"
+    (input)="onChange($event.target.value)"
+    (blur)="onTouched()"
+    class="form-control"
+    id="{{ label }}"
+    placeholder="{{ label }}"
+  />
+  <div *ngIf="isPending" class="fa fa-spinner fa-spin loader"></div>
+  <label for="{{ label }}">{{ label }}</label>
+  <div *ngIf="isInvalidFeedback" class="invalid-feedback">
+    <span *ngIf="isRequired">{{ label }} is required</span>
+    <span *ngIf="isInvalidFormat">Invalid email address</span>
+  </div>
+  <div class="invalid-feedback d-block">
+    <span *ngIf="isEmailExists">Email address is in use</span>
+  </div>
+</div>
